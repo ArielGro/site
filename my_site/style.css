@@ -95,10 +95,19 @@ footer {
     justify-content: space-between;
 }
 .footer_wrap p {
-    justify-content: start,
-}
+   justify-content: start;
+    display: block;
+ }
 .footer_wrap img {
     width: 100px;
     display: block;
     border-radius: 22%;
  }
+
+.logo {
+    width: auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+
