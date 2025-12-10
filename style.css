@@ -66,6 +66,7 @@ main {
     padding: 30px 20px;
     border-radius: 12px;
     border: 2px solid #8b0000;
+    /*קצת עזרה מהצאט*/
     box-shadow: 0 0 10px rgba(139, 0, 0, 0.5), inset 0 0 15px rgba(255, 0, 0, 0.1);
     color: #e0e0e0;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -122,31 +123,35 @@ footer {
     display: flex;
     gap: 200px;
 }
-    .footer_wrap div {
-        background: #111;
-        color: #e0e0e0;
-        border-radius: 12px;
-        border: 2px solid #8b0000;
-        box-shadow: 0 0 10px rgba(139, 0, 0, 0.5), inset 0 0 15px rgba(255, 0, 0, 0.1);
-        padding: 15px;
-        cursor: pointer;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 8px;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
+.footer_wrap div {
+    background: #111;
+    color: #e0e0e0;
+    border-radius: 12px;
+    border: 2px solid #8b0000;
+    box-shadow: 0 0 10px rgba(139, 0, 0, 0.5), inset 0 0 15px rgba(255, 0, 0, 0.1);
+    padding: 15px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-    .footer_wrap p {
-        justify-content: start;
-        display: block;
-    }
+.footer_wrap div:hover {
+    transform: translateY(-5px) rotate(-2deg);
+    box-shadow: 0 0 20px rgba(139, 0, 0, 0.8), inset 0 0 25px rgba(255, 0, 0, 0.15);
+}
+.footer_wrap p {
+   justify-content: start;
+   display: block;
+}
 
-    .footer_wrap img {
-        width: 100px;
-        display: block;
-        border-radius: 22%;
-    }
+.footer_wrap img {
+    width: 100px;
+    display: block;
+    border-radius: 22%;
+}
 
 .logo {
     width: auto;
