@@ -5,14 +5,12 @@
     flex-direction: column;
     min-height: 100vh;
     background-color: #1a1a1a; 
-    color: #fff; 
+    color: white; 
 }
-
 html, body {
     height: 100%;
     margin: 0;
 }
-
 .container {
     width: 90%;
     max-width: 1500px;
@@ -21,13 +19,16 @@ html, body {
 /* Header */
 header {
     background: #000;
-    color: #fff;
+    color: white;
     padding: 20px 0;
     border-radius: 200px;
 }
 .upper {
     display: flex;
     justify-content: space-between;
+}
+.space {
+    width: 200px;
 }
 .upper img {
     width: 200px;
@@ -45,14 +46,80 @@ header {
     padding: 0;
 }
  nav a {
-    color: #fff;
+    color: white;
     text-decoration: none;
 }
 nav a:hover {
     text-decoration: underline;
 }
+/*main*/
 main {
     flex: 1;
+}
+main img {
+    cursor: pointer;
+}
+    main .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+.items {
+    background: #111;
+    margin: 10px;
+    padding: 30px 20px;
+    border-radius: 12px;
+    border: 2px solid #8b0000;
+    /*קצת עזרה מהצאט*/
+    box-shadow: 0 0 10px rgba(139, 0, 0, 0.5), inset 0 0 15px rgba(255, 0, 0, 0.1);
+    color: #e0e0e0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 400px;
+    box-sizing: border-box;
+}
+    /*קצת עזרה מהצאט*/
+.items:hover {
+    transform: translateY(-5px) rotate(-2deg);
+    box-shadow: 0 0 20px rgba(139, 0, 0, 0.8), inset 0 0 25px rgba(255, 0, 0, 0.15);
+}
+
+.items button {
+     width: 50px;
+     background: transparent;
+     border: none;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     transition: transform 0.5s ease;
+}
+.items button:hover img {
+     transform: scale(1.2);
+     filter: drop-shadow(0 0 5px red) drop-shadow(0 0 5px red);
+}
+.like-btn {
+    gap: 6px;
+    color: white;
+    font-size: 18px;
+}
+.items img {
+    max-width: 100%;
+    height: auto;
+}
+.items h3 {
+    font-size: 24px;
+}
+.items_wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 100px;
+    font-size: 20px;
+    text-align: center;
+}
+.items_wrap a {
+    text-decoration: none;
+    color: white;
 }
 /* Sections */
 .section {
@@ -61,14 +128,13 @@ main {
 /*footer*/
 footer {
     background: #000;
-    color: #fff;
+    color: white;
     padding: 40px 0;
 }
 .links {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
     gap: 100px;
 }
 .footer_wrap a {
@@ -115,10 +181,10 @@ footer {
     display: flex;
     justify-content: space-between;
 }
-    .down img {
-        width: 200px;
-        height: 166.66px;
-    }
+.down img {
+    width: 200px;
+    height: 166.66px;
+}
 .space {
     width: 200px;
 }
@@ -127,3 +193,5 @@ footer {
     height: 205px;
 
 }
+
+
