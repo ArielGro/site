@@ -15,6 +15,9 @@ html, body {
     width: 90%;
     max-width: 1500px;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 /* Header */
 header {
@@ -56,15 +59,9 @@ nav a:hover {
 main {
     flex: 1;
 }
-main img {
+.items_wrap img {
     cursor: pointer;
 }
-    main .container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
 .items {
     background: #111;
     margin: 10px;
@@ -75,7 +72,7 @@ main img {
     box-shadow: 0 0 10px rgba(139, 0, 0, 0.5), inset 0 0 15px rgba(255, 0, 0, 0.1);
     color: #e0e0e0;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    width: 400px;
+    width: 350px;
     box-sizing: border-box;
 }
     /*קצת עזרה מהצאט*/
@@ -83,7 +80,7 @@ main img {
     transform: translateY(-5px) rotate(-2deg);
     box-shadow: 0 0 20px rgba(139, 0, 0, 0.8), inset 0 0 25px rgba(255, 0, 0, 0.15);
 }
-
+/*like*/
 .items button {
      width: 50px;
      background: transparent;
@@ -97,10 +94,21 @@ main img {
      transform: scale(1.2);
      filter: drop-shadow(0 0 5px red) drop-shadow(0 0 5px red);
 }
+.like-btn img {
+    width: 40px;
+    height: 40px;
+    max-width: 40px;
+    max-height: 40px;
+}
 .like-btn {
+    width: 50px;
     gap: 6px;
     color: white;
     font-size: 18px;
+    background: transparent;
+    border: none;
+    flex: 0 0 auto;
+    cursor: pointer;
 }
 .items img {
     max-width: 100%;
@@ -116,15 +124,74 @@ main img {
     gap: 100px;
     font-size: 20px;
     text-align: center;
+    border-bottom: 2px solid gray;
+    padding-bottom: 20px;
 }
 .items_wrap a {
     text-decoration: none;
     color: white;
 }
-/* Sections */
-.section {
-    padding: 40px 0;
+/*services*/
+.Services_sec h2 {
+    margin-top: 40px;
 }
+.service_wrap {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+}
+.up {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+}
+.down {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+}
+.services {
+    width: 350px;
+    height: 400px;
+    background: #111;
+    border: 2px solid #8b0000;
+    border-radius: 12px;
+    align-items: center;
+    padding: 10px;
+    margin-top: 20px;
+    box-sizing: border-box;
+    text-align: center;
+}
+.serv {
+    max-width: 100%;
+    max-height: 200px;
+    height: auto;
+    object-fit: contain;
+    flex-shrink: 1;
+}
+.donw .serv {
+    padding: 16.67px 16.67px;
+}
+.services h3 {
+    font-size: 20px;
+}
+.services p{
+    font-size: 16px;
+}
+.services button {
+    width: 50px;
+    background: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.5s ease;
+}
+
+    .services button:hover img {
+        transform: scale(1.2);
+        filter: drop-shadow(0 0 5px red) drop-shadow(0 0 5px red);
+    }
 /*footer*/
 footer {
     background: #000;
