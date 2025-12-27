@@ -19,9 +19,20 @@ html, body {
     flex-direction: column;
     align-items: center;
 }
+h3 {
+    font-family: 'Press Start 2P', monospace;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000, 0 0 15px #ff0000;
+}
+p {
+    font-size: 20px;
+    font-family: 'Jersey 10', monospace;
+    text-transform: uppercase;
+}
 /* Header */
 header {
-    background: #000;
+    background: black;
     color: white;
     padding: 20px 0;
     border-radius: 200px;
@@ -113,7 +124,7 @@ main {
     height: auto;
 }
 .items h3 {
-    font-size: 24px;
+
 }
 .items_wrap {
     display: flex;
@@ -138,6 +149,10 @@ main {
     flex-direction: column;
     margin: 20px;
 }
+.service_wrap a {
+    text-decoration: none;
+    color: white;
+}
 .up {
     display: flex;
     flex-direction: row;
@@ -150,7 +165,7 @@ main {
 }
 .services {
     width: 350px;
-    height: 370px;
+    height: 400px;
     background: #111;
     border: 2px solid #8b0000;
     border-radius: 12px;
@@ -170,12 +185,7 @@ main {
 .down .serv {
     padding: 16.67px 16.67px;
 }
-.services h3 {
-    font-size: 20px;
-}
-.services p{
-    font-size: 16px;
-}
+
 .services button {
     width: 50px;
     background: transparent;
