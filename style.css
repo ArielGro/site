@@ -27,11 +27,9 @@ header {
     border-radius: 200px;
 }
 .upper {
+    width: 100%;
     display: flex;
     justify-content: space-between;
-}
-.space {
-    width: 200px;
 }
 .upper img {
     width: 200px;
@@ -152,7 +150,7 @@ main {
 }
 .services {
     width: 350px;
-    height: 400px;
+    height: 370px;
     background: #111;
     border: 2px solid #8b0000;
     border-radius: 12px;
@@ -169,7 +167,7 @@ main {
     object-fit: contain;
     flex-shrink: 1;
 }
-.donw .serv {
+.down .serv {
     padding: 16.67px 16.67px;
 }
 .services h3 {
@@ -187,11 +185,10 @@ main {
     justify-content: center;
     transition: transform 0.5s ease;
 }
-
-    .services button:hover img {
-        transform: scale(1.2);
-        filter: drop-shadow(0 0 5px red) drop-shadow(0 0 5px red);
-    }
+.services button:hover img {
+     transform: scale(1.2);
+     filter: drop-shadow(0 0 5px red) drop-shadow(0 0 5px red);
+}
 /*footer*/
 footer {
     background: #000;
@@ -252,13 +249,7 @@ footer {
     width: 200px;
     height: 166.66px;
 }
-.space {
-    width: 200px;
-}
 .logo {
     width: 246px;
     height: 205px;
-
 }
-
-
