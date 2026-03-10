@@ -36,26 +36,26 @@
             <h2>Contact Us</h2>
             <form id="myForm">
                 <label for="username">Username:</label>
-                <input type="text" id="username" name="username" placeholder="username"><br><br>
+                <input type="text" class="form_select" id="username" name="username" placeholder="username"><br><br>
 
                 <label for="email">Email:</label>
-                <input type="email" id="email" placeholder="example@gmail.com" pattern=".+@gmail\.com" required><br><br>
+                <input type="email" class="form_select" id="email" value="@gmail.com"  pattern=".+@gmail\.com" required><br><br>
 
                 <label for="age">Age:</label>   
-                <input type="number" id="age" name="age" min="15" max="120"><br><br>
+                <input type="number" class="form_select" id="age" name="age" value="16" min="15" max="120"><br><br>
 
                 <label for="Tel">Phone:</label><br>
-                <input type="tel" id="Tel" name="Telephone" placeholder="0500000000" pattern="[0-9]{10}"><br><br>
+                <input type="tel" class="form_select" id="Tel" name="Telephone" value="05"pattern="[0-9]{10}"><br><br>
 
-                <label for="Issue">Issue:</label>
-                <select name="Issue" id="Issue">
+                <label for="Issue" >Issue:</label>
+                <select name="Issue" class="form_select" id="Issue">
                     <option value="">Select an issue</option>
                     <option value="bugs">Bugs</option>
                     <option value="technical">Technical</option>
                     <option value="general question">General</option>
                 </select><br><br>
                 <label for="message">Tell us more about your issue:</label><br>
-                <textarea name="complaint" id="message" rows="10" cols="50" placeholder="Please describe your issue in detail..."></textarea><br><br>
+                <textarea name="complaint" class="form_select" id="message" rows="10" cols="50" placeholder="Please describe your issue in detail..."></textarea><br><br>
 
                 <button type="button" id="submitBtn" onclick="validateForm()">Submit</button>
             </form>
