@@ -5,7 +5,6 @@ function validateForm() {
     const phone = document.getElementById("Tel").value;
     const issue = document.getElementById("Issue").value;
 
-
     const usernamePattern = /^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])[A-Za-z0-9_]+$/;
 
     if (username.trim() === "") {
@@ -23,13 +22,13 @@ function validateForm() {
         return;
     }
 
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailPattern.test(email)) {
-        alert("Please enter a valid email address!");
+    const gmailPattern = /^(?!.*\.\.)[a-zA-Z0-9][a-zA-Z0-9.]{4,28}[a-zA-Z0-9]@gmail\.com$/;
+    if (!gmailPattern.test(email)) {
+        alert("Invalid Gmail address! The part before @gmail.com must be 6-30 characters, use only letters, numbers, or periods, and cannot start/end with a period or have consecutive periods.");
         return;
     }
 
-    const numberCheck = /[0-9]/;
+    const numberCheck = /[0-9]/; 
     if (numberCheck.test(email)) {
         alert("Your email cannot contain numbers! Letters only, please.");
         return;
@@ -40,9 +39,9 @@ function validateForm() {
         return;
     }
 
-    const phonePattern = /^[05][0-9]{9}$/; 
+    const phonePattern = /^[0-9]{10}$/; 
     if (!phonePattern.test(phone)) {
-        alert("Please enter a valid phone number (e.g., 0501234567)!");
+        alert("Please enter a valid phone number!");
         return;
     }
 
