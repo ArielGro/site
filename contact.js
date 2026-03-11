@@ -22,9 +22,9 @@ function validateForm() {
         return;
     }
 
-    const gmailPattern = /^(?!.*\.\.)[a-zA-Z0-9][a-zA-Z0-9.]{4,28}[a-zA-Z0-9]@gmail\.com$/;
+    const gmailPattern = /^(?!.*\.\.)[a-zA-Z0-9][a-zA-Z0-9.][a-zA-Z0-9]@gmail\.com$/;
     if (!gmailPattern.test(email)) {
-        alert("Invalid Gmail address! The part before @gmail.com must be 6-30 characters, use only letters, numbers, or periods, and cannot start/end with a period or have consecutive periods.");
+        alert("Invalid Gmail address! Make sure it ends with @gmail.com and does not contain consecutive dots.");
         return;
     }
 
