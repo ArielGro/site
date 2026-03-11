@@ -202,6 +202,16 @@ main {
     color: red;
 }
 
+.contact_us {
+    text-align: center;
+    margin: 5px 0; 
+}
+
+.contact_info {
+    text-decoration: underline; 
+    margin-left: 20px;
+}
+
 /* ========== FOOTER ========== */
 footer {
     background: #000;
@@ -252,15 +262,6 @@ footer {
 
 .img_foot {
     width: 60%;
-}
-.contact_us {
-    text-align: center;
-    margin: 5px 0; 
-}
-
-.contact_info {
-    text-decoration: underline; 
-    margin-left: 20px;
 }
 
 #rights {
