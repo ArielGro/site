@@ -22,9 +22,9 @@ function validateForm() {
         return;
     }
 
-    const gmailPattern = /^(?!.*\.\.)[a-zA-Z0-9][a-zA-Z0-9.][a-zA-Z0-9]@gmail\.com$/;
+    const gmailPattern = /^(?!*\.\.)[a-zA-Z0-9][a-zA-Z0-9.][a-zA-Z0-9]@gmail\.com$/;
     if (!gmailPattern.test(email)) {
-        alert("Invalid Gmail address! Make sure it ends with @gmail.com and does not contain consecutive dots.");
+        alert("Invalid Gmail address! Make sure it ends with @gmail.com");
         return;
     }
 
