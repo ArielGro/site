@@ -5,11 +5,16 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background-color: #1a1a1a;
     color: white;
     margin: 0;
-    padding: 0;
+    padding: 0;  
+    background-color: #1a1a1a; 
+    background-image: linear-gradient(rgba(17, 17, 17, 0.75), rgba(17, 17, 17, 0.75)), url('https://i.pinimg.com/736x/c6/e8/59/c6e8593be42f400230081bc3e16d666b.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; 
 }
+
 html, body {
     height: 100%;
     margin: 0;
@@ -24,12 +29,16 @@ html, body {
     flex-direction: column;
     align-items: center;
 }
-
 /* ========== PISKAOT ========== */
 a{
     color: white;
 }
-
+h2{
+    font-size: 30px;
+    font-family: 'Press Start 2P', monospace;
+    text-shadow: 3px 3px 0px #8b0000;
+    letter-spacing: 1px;
+}
 h3 {
     font-family: 'Press Start 2P', monospace;
     text-transform: uppercase;
@@ -44,16 +53,19 @@ p {
 }
 
 ul {
-    font-size: 20px;
+    font-size: 1rem;
     font-family: 'Sixtyfour', monospace;
 }
 
 /* ========== HEADER ========== */
 header {
-    background: black;
+    background: rgba(10, 10, 10, 0.85);
     color: white;
-    padding: 20px 0;
-    border-radius: 50px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 0 0 25px 25px; 
+    border-bottom: 2px solid #ff0000;
+    box-shadow: 0px 8px 35px rgba(255, 0, 0, 0.6);
 }
 
 .header_wrap {
@@ -67,42 +79,57 @@ header {
 
 .header_wrap h1 {
     text-align: left;
-    margin: 20px 5px;
+    margin: 0;
     font-family: 'Jersey 20', monospace;
     text-transform: uppercase;
-    font-size: 60px;
+    font-size: 3.5rem;
+    color: white;
+    text-shadow: 2px 2px 0px #8b0000, -2px -2px 0px #0000aa;
+    animation: text-glitch 3s infinite linear alternate-reverse;
 }
 
 .h1 {
     width: 100%;
 }
-
+/* ================= gemini to the rescue ================= */
+@keyframes text-glitch {
+    0% { text-shadow: 2px 2px 0px #8b0000, -2px -2px 0px #0000aa; transform: skewX(0deg); }
+    2% { text-shadow: -3px -2px 0px #ff0000, 2px 3px 0px #00ffff; transform: skewX(5deg); } 
+    4% { text-shadow: 2px -2px 0px #8b0000, -2px 2px 0px #0000aa; transform: skewX(-5deg); }
+    6% { text-shadow: -2px 2px 0px #8b0000, 2px -2px 0px #0000aa; transform: skewX(0deg); }
+    100% { text-shadow: 2px 2px 0px #8b0000, -2px -2px 0px #0000aa; transform: skewX(0deg); }
+}
 .img {
     width: 65%;
 }
 
 .logo {
-    width: 250px;
-    height: auto;
+    max-width: auto;
+    max-height: 150px;
+    filter: drop-shadow(0 0 10px rgba(139, 0, 0, 0.5));
 }
 
 .header_wrap ul {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 30px;
     margin-top: 5px;
     list-style: none;
     padding: 0;
+    position: sticky; 
+    top: 0;
+    z-index: 9999; 
 }
 
-nav a {
+.header_wrap a {
     color: white;
+    display: inline-block;
     text-decoration: none;
-    transition: all 0.3s ease;
-}
+    transition: color 0.3s ease;
+ }
 
-nav a:hover {
-    text-decoration: underline;
+.header_wrap a:hover {
+     color: red;
 }
 
 /* ========== MAIN ========== */
@@ -112,76 +139,62 @@ main {
 }
 /* ========== FORM ========== */
 #Form{
-    background: #111;
-    color: #e0e0e0;
-    border-radius: 12px;
+    background: rgba(10, 10, 10, 0.85); /* Dark translucent glass */
     border: 2px solid #8b0000;
-    padding: 30px;
+    border-radius: 12px;
+    padding: 40px;
     width: 100%;
     max-width: 600px;
+    margin: 40px auto;
+    box-shadow: 0 0 25px rgba(139, 0, 0, 0.4), inset 0 0 15px rgba(255, 0, 0, 0.1);
 }
 
 #Form h2 {
-    font-size: 36px;
     text-align: center;
-    margin-bottom: 20px;
-    font-family: 'Nosifer', sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    /*=============== gemini help============== */
-    background: linear-gradient(180deg, #8B0000 0%, #ff0000 50%, #4a0000 100%);
-    background-size: 100% 200%;   
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;    
-    filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.9));
-    animation: ooze 3s ease-in-out infinite;
+    color: #ff0000;
+    margin-bottom: 30px;
+    font-size: 24px;
+    text-shadow: 2px 2px 0px #4a0000;
 }
 
-@keyframes ooze {
-    0% {
-        background-position: 50% 0%;
-    }
-    50% {
-        background-position: 50% 100%;
-    }
-    100% {
-        background-position: 50% 0%;
-    }
-}
-/* Styling the Submit Button */
 #submitBtn {
-    background-color: #8b0000; 
+    width: 100%;
+    background: #4a0000;
     color: white;
-    font-family: 'Press Start 2P', cursive; 
-    padding: 15px 30px;
-    font-size: 18px;
-    border: 2px solid #ff0000;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 14px;
+    padding: 20px;
+    border: 2px solid #8b0000;
     border-radius: 8px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    margin-top: 10px;
     text-transform: uppercase;
-    box-shadow: 0 0 10px rgba(139, 0, 0, 0.7);
-    margin-top: 20px;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.8);
 }
 
 
 #submitBtn:hover {
-    background-color: #ff0000; 
-    color: black;
-    box-shadow: 0 0 25px #ff0000, inset 0 0 15px #8b0000;
-    transform: scale(1.05);
+    background: #ff0000;
+    color: white;
+    border-color: #ffffff;
+    box-shadow: 0 0 20px #ff0000, 0 0 40px #ff0000;
+    text-shadow: 2px 2px 0px #000;
+    transform: scale(1.02); 
 }
 
 .form_select {
-    background-color: #181818; 
-    color: white; 
-    border: 2px solid #8b0000; 
-    border-radius: 5px; 
-    padding: 10px; 
-    font-family: Arial, sans-serif; 
+    width: 100%;
+    background: #0d0d0d;
+    border: 1px solid #4a0000;
+    color: #00ff00; 
+    font-family: 'Jersey 20', monospace;
+    font-size: 20px;
+    padding: 15px;
+    border-radius: 6px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
 }
-
 
 .form_select:focus {
     outline: none; 
@@ -189,22 +202,46 @@ main {
     box-shadow: 0 0 10px rgba(255, 0, 0, 0.5); 
 }
 #myForm label{
-     font-size: 23px;
     font-family: 'Jersey 10', monospace;
+    font-size: 28px;
+    color: #ffffff;
+    display: block;
+    margin-bottom: 5px;
     text-transform: uppercase;
+    letter-spacing: 1px;
 }
-
+.two_inputs {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+}
+.input_one, .input_two {
+    flex: 1;
+}
+.contact_us_wrap {
+    background: #111;
+    border: 1px dashed #550000;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    margin-top: 20px;
+    max-width: 600px;
+}
 .contact_us a{
-    transition: color 0.3s ease;
+    text-decoration: none;
+    color: #aaaaaa;
+    transition: 0.3s;
 }
 
 .contact_us a:hover {
-    color: red;
+    color: #00ff00; 
+    text-shadow: 0 0 10px #00ff00;
 }
 
 .contact_us {
-    text-align: center;
-    margin: 5px 0; 
+    color: #ff0000;
+    font-size: 26px;
+    margin-bottom: 10px;
 }
 
 .contact_info {
@@ -214,13 +251,17 @@ main {
 
 /* ========== FOOTER ========== */
 footer {
-    background: #000;
+    background: rgba(5, 5, 5, 0.85);
+    border-top: 2px solid #ff0000;
+    box-shadow: 0px 8px 35px rgba(255, 0, 0, 0.7);
     color: white;
-    padding: 40px 0;
+    padding-top: 20px;
+    padding-bottom: 15px;
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
     margin-top: 50px;
 }
+
 
 .links {
     display: flex;
@@ -236,6 +277,8 @@ footer {
 .footer_wrap a {
     color: white;
     display: inline-block;
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 .footer_wrap a:hover {
@@ -258,16 +301,19 @@ footer {
 
 .nav_foot {
     width: 100%;
+    margin-bottom: 10px
 }
 
 .img_foot {
-    width: 60%;
+    width: 67%;
 }
 
 #rights {
     display: block;
     text-align: center;
-    margin-top: 30px;
+    font-size: 1rem;
+    margin-top: 10px;
+    margin-bottom: 0;
 }
 
 /* ========== SOCIAL MEDIA ========== */
@@ -283,8 +329,8 @@ footer {
     justify-content: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     margin: 10px auto;
-    width: 100px;
-    height: 100px;
+    max-height: 30px;
+    width: auto;
 }
 
 .social:hover {
@@ -293,7 +339,8 @@ footer {
 }
 
 .social img {
-    width: 100px;
+    max-height: 50px ;
+    width: auto;
     display: block;
-    border-radius: 22%;
+     border-radius: 22%;
 }

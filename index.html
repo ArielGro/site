@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <!-- HEADER SECTION: Contains logo, title, and navigation menu -->
+    <!-- HEADER -->
     <header>
         <div class="container">
             <div class="header_wrap">
@@ -41,7 +41,7 @@
             <div class="container">
                 <div class="items_wrap">
                     <!-- Movies card -->
-                    <div class="items" data-id="movies">
+                    <div class="items">
                         <a href="#">
                             <div>
                                 <h3>Movies</h3>
@@ -50,16 +50,16 @@
                             </div>
                         </a>
                         <!-- Like button with heart icon and counter -->
-                        <button>
-                            <img class="heart" src="img/white-heart.png" alt="like" />
+                        <button >
+                            <img class="heart"  src="img/white-heart.png" alt="like" />
                             <span class="like-count">0</span>
                         </button>
                         <!-- View counter -->
-                        <span class="views">👁 0 views</span>
+                        <span class="views">👁 <span class="view-count">0</span> views</span>
                     </div>
 
                     <!-- Games card -->
-                    <div class="items" data-id="games">
+                    <div class="items">
                         <a href="#">
                             <div>
                                 <h3>Games</h3>
@@ -67,15 +67,15 @@
                                 <p>Click here to see all of the games of FNAF</p>
                             </div>
                         </a>
-                        <button>
-                            <img class="heart" src="img/white-heart.png" alt="like" />
+                        <button >
+                            <img class="heart"  src="img/white-heart.png" alt="like" />
                             <span class="like-count">0</span>
                         </button>
-                        <span class="views">👁 0 views</span>
+                        <span class="views">👁 <span class="view-count">0</span> views</span>
                     </div>
 
                     <!-- Info card -->
-                    <div class="items" data-id="info">
+                    <div class="items">
                         <a href="#">
                             <div>
                                 <h3>Info</h3>
@@ -84,10 +84,10 @@
                             </div>
                         </a>
                         <button>
-                            <img class="heart" src="img/white-heart.png" alt="like" />
+                            <img class="heart"  src="img/white-heart.png" alt="like" />
                             <span class="like-count">0</span>
                         </button>
-                        <span class="views">👁 0 views</span>
+                        <span class="views">👁 <span class="view-count">0</span> views</span>
                     </div>
                 </div>
             </div>
@@ -199,5 +199,6 @@
             </div>
         </div>
     </footer>
+    <script src="main.js"></script>
 </body>
 </html>
