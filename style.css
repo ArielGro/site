@@ -1,36 +1,4 @@
-﻿/* ========== BASE STYLES ========== */
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    color: white;
-    margin: 0;
-    padding: 0;  
-    background-color: #1a1a1a; 
-    background-image: linear-gradient(rgba(17, 17, 17, 0.75), rgba(17, 17, 17, 0.75)), url('https://i.pinimg.com/736x/c6/e8/59/c6e8593be42f400230081bc3e16d666b.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed; 
-}
-
-html, body {
-    height: 100%;
-    margin: 0;
-}
-
-/* ========== CONTAINER ========== */
-
-.container {
-    width: 90%;
-    max-width: 1500px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
+﻿/*====================================================================*/
 /* ========== PISKAOT ========== */
 
 h2 {
@@ -55,94 +23,24 @@ ul {
     font-size: 1rem;
     font-family: 'Sixtyfour', monospace;
 }
-
+/*====================================================================*/
 /* ========== HEADER ========== */
 
 header {
-    background: rgba(10, 10, 10, 0.85);
-    color: white;
-    padding: 20px 0;
-    border-radius: 0 0 25px 25px; 
-    border-bottom: 2px solid #ff0000;
-    box-shadow: 0px 8px 35px rgba(255, 0, 0, 0.6);
     position: sticky; 
     top: 0;
     z-index: 1000; 
     
 }
-
-.header_wrap {
-    width: 100%;
-}
-
-.up_head {
-    display: flex;
-    align-items: center;
-}
-
-.header_wrap h1 {
-    text-align: left;
-    margin: 0;
-    font-family: 'Jersey 20', monospace;
-    text-transform: uppercase;
-    font-size: 3.5rem;
-    color: white;
-    text-shadow: 2px 2px 0px #8b0000, -2px -2px 0px #0000aa;
-    animation: text-glitch 3s infinite linear alternate-reverse;
-}
-
-.h1 {
-    width: 100%;
-
-}
-/* ================= gemini to the rescue ================= */
-@keyframes text-glitch {
-    0% { text-shadow: 2px 2px 0px #8b0000, -2px -2px 0px #0000aa; transform: skewX(0deg); }
-    2% { text-shadow: -3px -2px 0px #ff0000, 2px 3px 0px #00ffff; transform: skewX(5deg); } 
-    4% { text-shadow: 2px -2px 0px #8b0000, -2px 2px 0px #0000aa; transform: skewX(-5deg); }
-    6% { text-shadow: -2px 2px 0px #8b0000, 2px -2px 0px #0000aa; transform: skewX(0deg); }
-    100% { text-shadow: 2px 2px 0px #8b0000, -2px -2px 0px #0000aa; transform: skewX(0deg); }
-}
-.img {
-    width: 65%;
-}
-.header_wrap ul {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    margin-top: 5px;
-    list-style: none;
-    padding: 0;
-}
-
-.header_wrap a {
-    color: white;
-    display: inline-block;
-    transition: color 0.3s ease;
-    text-decoration: none;
- }
-
-.header_wrap a:hover {
-     color: red;
-}
-
+/*====================================================================*/
 /* ========== MAIN ========== */
-
-main {
-    flex: 1;
-    padding: 20px 0;
-}
-
-    main img {
-        cursor: pointer;
-    }
-
 .views, .like-count {
     color: white;
     font-size: 25px;
     font-family: 'Jersey 10', monospace;
     text-transform: uppercase;
 }
+/*====================================================================*/
 /* ========== IMAGE ========== */
 .white_heart{
     display:block;
@@ -165,6 +63,7 @@ main {
         transform: translateY(0) scale(1); 
     }
 }
+/*====================================================================*/
 /* ========== ITEMS CARDS ========== */
 
 .items {
@@ -181,20 +80,20 @@ main {
     cursor: pointer;
 }
 
-    .items:hover {
-        transform: translateY(-5px) rotate(-2deg);
-        box-shadow: 0 0 20px rgba(139, 0, 0, 0.8), inset 0 0 25px rgba(255, 0, 0, 0.15);
-    }
+.items:hover {
+    transform: translateY(-5px) rotate(-2deg);
+    box-shadow: 0 0 20px rgba(139, 0, 0, 0.8), inset 0 0 25px rgba(255, 0, 0, 0.15);
+}
 
-    .items button {
-        width: 50px;
-        background: transparent;
-        border: none;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: transform 0.5s ease;
-        cursor: pointer;
+.items button {
+    width: 50px;
+    background: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.5s ease;
+    cursor: pointer;
     }
 
 .items img {
@@ -218,7 +117,7 @@ main {
         text-decoration: none;
         color: white;
     }
-
+/*====================================================================*/
 /* ========== SERVICES ========== */
 
 .Services_sec h2 {
@@ -283,106 +182,4 @@ main {
     transform: translateY(-5px) rotate(-2deg);
     box-shadow: 0 0 20px rgba(139, 0, 0, 0.8), inset 0 0 25px rgba(255, 0, 0, 0.15);
 }
-
-/* ========== FOOTER ========== */
-
-footer {
-    background: rgba(5, 5, 5, 0.85);
-    border-top: 2px solid #ff0000;
-    box-shadow: 0px 8px 35px rgba(255, 0, 0, 0.7);
-    color: white;
-    padding-top: 20px;
-    padding-bottom: 15px;
-    border-top-left-radius: 50px;
-    border-top-right-radius: 50px;
-    margin-top: 50px;
-}
-
-.links {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 100px;
-}
-
-.footer_wrap {
-    width: 100%;
-}
-
-.footer_wrap a {
-    color: white;
-    display: inline-block;
-    text-decoration: none;
-    transition: color 0.3s ease;
- }
-
-.footer_wrap a:hover {
-     color: red;
-}
-
-.footer_wrap ul {
-    display: flex;
-    text-align: left;
-    gap: 20px;
-    margin-top: 50px;
-    list-style: none;
-    padding: 0;
-}
-
-/* ========== SOCIAL MEDIA ========== */
-
-.social {
-    background: #111;
-    color: #e0e0e0;
-    border-radius: 12px;
-    border: 2px solid #8b0000;
-    padding: 15px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    margin: 10px auto;
-    max-height: 30px;
-    width: auto;
-}
-
-.social:hover {
-    transform: translateY(-5px) rotate(-2deg);
-    box-shadow: 0 0 20px rgba(139, 0, 0, 0.8), inset 0 0 25px rgba(255, 0, 0, 0.15);
-}
-
- .social img {
-    max-height: 50px ;
-    width: auto;
-    display: block;
-    border-radius: 22%;
- }
-
-.down_foot {
-    display: flex;
-    align-items: center;
-}
-
-.nav_foot {
-    width: 100%;
-    margin-bottom: 10px
-}
-
-.img_foot {
-    width: 67%;
-}
-
-.logo {
-    max-width: auto;
-    max-height: 150px;
-    filter: drop-shadow(0 0 10px rgba(139, 0, 0, 0.5));
-}
-
-#rights {
-    display: block;
-    text-align: center;
-    font-size: 1rem;
-    margin-top: 10px;
-    margin-bottom: 0;
-}
+/*====================================================================*/
