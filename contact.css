@@ -1,13 +1,17 @@
-/*====================================================================*/
-/* ========== PISKAOT ========== */
-a{
+
+/* Default link color (overrides browser blue) */
+a {
     color: white;
 }
-h2{
+
+/* Contact page main heading — drip horror font with dark red shadow */
+h2 {
     font-family: 'Nosifer', monospace;
     text-shadow: 3px 3px 0px #8b0000;
     letter-spacing: 1px;
 }
+
+/* Sub-headings — same pixel art style as style.css */
 h3 {
     font-family: 'Press Start 2P', monospace;
     text-transform: uppercase;
@@ -15,47 +19,67 @@ h3 {
     text-shadow: 0 0 10px #ff0000;
 }
 
+/* Paragraph text — retro mono, all-caps */
 p {
     font-size: 23px;
     font-family: 'Jersey 10', monospace;
     text-transform: uppercase;
 }
 
+/* Navigation list — digital display font */
 ul {
     font-size: 1rem;
     font-family: 'Sixtyfour', monospace;
 }
-/*====================================================================*/
-/* ========== MAIN ========== */
+
+
 main {
     flex: 1;
     padding: 20px 0;
 }
-/*====================================================================*/
-/* ========== FORM ========== */
-#Form{
-    background: rgba(10, 10, 10, 0.85); /* Dark translucent glass */
+
+
+/*====================================================================
+  FORM CARD (#Form)
+  ──────────────────────────────────────────────────────────────────
+  The dark glass card that wraps all form inputs.
+  - width: 100% + max-width: 600px keeps it centered and readable.
+  - Inset red box-shadow adds a subtle "glowing interior" feel.
+====================================================================*/
+#Form {
+    background: rgba(10, 10, 10, 0.85); /* dark translucent glass panel */
     border: 2px solid #8b0000;
     border-radius: 12px;
     padding: 40px;
     width: 100%;
     max-width: 600px;
-    margin: 40px auto;
+    margin: 40px auto; /* centers the card horizontally */
     box-shadow: 0 0 25px rgba(139, 0, 0, 0.4), inset 0 0 15px rgba(255, 0, 0, 0.1);
 }
 
+/* "Contact Us" heading inside the form card — large, centered, red */
 #Form h2 {
     text-align: center;
     color: #ff0000;
     margin-bottom: 30px;
     font-size: 50px;
-    text-shadow: 2px 2px 0px #4a0000;
+    text-shadow: 2px 2px 0px #4a0000; /* dark red drop shadow */
 }
 
 
+/*====================================================================
+  SUBMIT BUTTON (#submitBtn)
+  ──────────────────────────────────────────────────────────────────
+  Full-width button at the bottom of the form.
+  - Default state: very dark red background, pixel font, dark border.
+  - Hover state: bright red background + strong outward red glow +
+    slight scale-up (1.02) to simulate a physical button press.
+  - type="button" prevents native form submission; contact.js handles
+    the click event instead.
+====================================================================*/
 #submitBtn {
     width: 100%;
-    background: #4a0000;
+    background: #4a0000;   /* very dark red */
     color: white;
     font-family: 'Press Start 2P', monospace;
     font-size: 14px;
@@ -69,21 +93,36 @@ main {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.8);
 }
 
-
+/* Hover: bright red, white border, strong red glow, slight grow */
 #submitBtn:hover {
     background: #ff0000;
     color: white;
     border-color: #ffffff;
-    box-shadow: 0 0 20px #ff0000, 0 0 40px #ff0000;
+    box-shadow: 0 0 20px #ff0000; /* double-layer red glow */
     text-shadow: 2px 2px 0px #000;
-    transform: scale(1.02); 
+    transform: scale(1.02); /* subtle size increase on hover */
 }
 
+
+/*====================================================================
+  FORM INPUTS (.form_select)
+  ──────────────────────────────────────────────────────────────────
+  Shared style for ALL interactive form elements:
+    <input type="text">, <input type="email">, <input type="number">,
+    <input type="tel">, <select>, <textarea>
+  Applied via class="form_select" on each element in the HTML.
+
+  - Green text (#00ff00) on a near-black background creates a
+    hacker/terminal aesthetic consistent with the horror theme.
+  - box-sizing: border-box ensures padding doesn't expand the element
+    beyond its declared width.
+  - On focus: red border + red glow highlight the active field.
+====================================================================*/
 .form_select {
     width: 100%;
-    background: #0d0d0d;
-    border: 1px solid #4a0000;
-    color: #00ff00; 
+    background: #0d0d0d;         /* almost-black background */
+    border: 1px solid #4a0000;   /* dark red border (unfocused) */
+    color: #00ff00;              /* terminal green text */
     font-family: 'Jersey 20', monospace;
     font-size: 20px;
     padding: 15px;
@@ -92,57 +131,90 @@ main {
     margin-bottom: 20px;
 }
 
+/* Focus state: red border glow to indicate the active field */
 .form_select:focus {
-    outline: none; 
-    border-color: #ff0000; 
-    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5); 
+    outline: none;               /* removes default browser focus ring */
+    border-color: #ff0000;       /* bright red border on focus */
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
 }
-#myForm label{
+
+
+/*====================================================================
+  FORM LABELS (#myForm label)
+  ──────────────────────────────────────────────────────────────────
+  Labels are styled as full-width block elements so they sit above
+  their input on their own line. Large retro font, all-caps.
+====================================================================*/
+#myForm label {
     font-family: 'Jersey 10', monospace;
     font-size: 28px;
     color: #ffffff;
-    display: block;
+    display: block;           /* full-width, forces input below it */
     margin-bottom: 5px;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
+
+
+/*====================================================================
+  TWO-COLUMN INPUT ROW (.two_inputs)
+  ──────────────────────────────────────────────────────────────────
+  Wraps the Age and Phone fields side by side using flexbox.
+  gap: 20px creates space between the two columns.
+  .first_input and .second_input use flex: 1 to share the row equally.
+====================================================================*/
 .two_inputs {
     display: flex;
     gap: 20px;
     width: 100%;
 }
+
+/* Each column takes equal space */
 .input_one, .input_two {
     flex: 1;
 }
+
+
+/*====================================================================
+  CONTACT INFO BLOCK (.contact_us_wrap)
+  ──────────────────────────────────────────────────────────────────
+  A secondary info block shown below the form, offering direct
+  contact alternatives (email address + phone number).
+  - Dashed dark-red border gives it a "torn note" feel.
+  - Links inside turn green with a green glow on hover, evoking
+    a terminal/hacker aesthetic.
+====================================================================*/
 .contact_us_wrap {
     background: #111;
-    border: 1px dashed #550000;
+    border: 1px dashed #550000; /* dashed border — subtler than the form card */
     padding: 20px;
     border-radius: 8px;
     text-align: center;
     margin-top: 20px;
     max-width: 600px;
 }
-.contact_us a{
+
+/* Links inside the contact-us block: default gray, hover green glow */
+.contact_us a {
     text-decoration: none;
     color: #aaaaaa;
     transition: 0.3s;
 }
 
 .contact_us a:hover {
-    color: #00ff00; 
-    text-shadow: 0 0 10px #00ff00;
+    color: #00ff00;                         /* terminal green on hover */
+    text-shadow: 0 0 10px #00ff00;          /* green neon glow */
 }
 
+/* Main text of the contact-us block — red, large retro font */
 .contact_us {
     color: #ff0000;
     font-size: 26px;
     margin-bottom: 10px;
 }
 
+/* Individual contact links (email + phone) — underlined, indented */
 .contact_info {
-    text-decoration: underline; 
-    margin-left: 20px;
+    text-decoration: underline;
+    margin-left: 20px; /* indent from the label text before it */
 }
-
-/*====================================================================*/

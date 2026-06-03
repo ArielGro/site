@@ -1,143 +1,184 @@
-/*====================================================================*/
-/* ========== BASE STYLES ========== */
+/*====================================================================
+  global.css
+  ──────────────────────────────────────────────────────────────────
+====================================================================*/
+
+
+/*====================================================================
+  BASE STYLES — body & html reset
+  ──────────────────────────────────────────────────────────────────
+====================================================================*/
 body {
-    font-family: Arial, sans-serif;
+    font-family: Arial, sans-serif; /* fallback font; overridden by page-specific fonts */
     line-height: 1.6;
     display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+    flex-direction: column; /* stacks header → main → footer vertically */
+    min-height: 100vh;      /* ensures footer reaches the bottom even on short pages */
     color: white;
     margin: 0;
-    padding: 0;  
-    background-color: #1a1a1a; 
-    background-image: linear-gradient(rgba(17, 17, 17, 0.75), rgba(17, 17, 17, 0.75)), url('https://i.pinimg.com/736x/c6/e8/59/c6e8593be42f400230081bc3e16d666b.jpg');
+    padding: 0;
+    background-color: #1a1a1a;  /* solid dark fallback while the image loads */
+    background-image: linear-gradient(
+        rgba(17, 17, 17, 0.75),  /* dark overlay — top */
+        rgba(17, 17, 17, 0.75)   /* dark overlay — bottom */
+    ), url('https://i.pinimg.com/736x/c6/e8/59/c6e8593be42f400230081bc3e16d666b.jpg');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed; 
+    background-attachment: fixed; /* bg stays fixed as content scrolls */
 }
+
+/* Reset height and margin on both html and body so the
+   flex column layout spans the full viewport height. */
 html, body {
     height: 100%;
     margin: 0;
 }
 
+/* main fills all available vertical space between header and footer */
 main {
     flex: 1;
     padding: 20px 0;
 }
-/*====================================================================*/
-/* ========== CONTAINER ========== */
+
+
+/*====================================================================
+  CONTAINER
+  ──────────────────────────────────────────────────────────────────
+====================================================================*/
 .container {
     width: 90%;
     max-width: 1500px;
-    margin: 0 auto;
+    margin: 0 auto;         /* centers the container horizontally */
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center;    /* centers child content horizontally */
 }
-/*====================================================================*/
-/* ========== HEADER ========== */
+
+
+/*====================================================================
+  HEADER
+  ──────────────────────────────────────────────────────────────────
+  The sticky top bar that stays visible during scrolling.
+====================================================================*/
 header {
-    background: rgba(10, 10, 10, 0.85);
+    background: rgba(10, 10, 10, 0.85); /* dark glass effect */
     color: white;
     padding-top: 10px;
     padding-bottom: 10px;
-    border-radius: 0 0 25px 25px; 
-    border-bottom: 2px solid #ff0000;
-    box-shadow: 0px 8px 35px rgba(255, 0, 0, 0.6);
+    border-radius: 0 0 25px 25px;       /* rounded bottom corners only */
+    border-bottom: 2px solid #ff0000;   /* red accent border */
+    box-shadow: 0px 8px 35px rgba(255, 0, 0, 0.6); /* red glow beneath header */
 }
 
+/* .header_wrap stretches to fill the .container's full width */
 .header_wrap {
     width: 100%;
 }
 
+/* .up_head aligns logo and site title horizontally */
 .up_head {
     display: flex;
     align-items: center;
 }
 
+/* Site title (h1) inside the header */
 .header_wrap h1 {
     text-align: left;
     margin: 0;
-    font-family: 'Jersey 20', monospace;
+    font-family: 'Jersey 20', monospace; /* retro display font */
     text-transform: uppercase;
     font-size: 3.5rem;
     color: white;
+    /* Initial state of the glitch text-shadow — animated via @keyframes text-glitch */
     text-shadow: 2px 2px 0px #8b0000, -2px -2px 0px #0000aa;
     animation: text-glitch 3s infinite linear alternate-reverse;
 }
 
+/* .h1 takes full width so the title spans the header */
 .h1 {
     width: 100%;
 }
+
+/* .img wrapper controls logo container width */
 .img {
     width: 65%;
 }
 
+/* .logo styles apply to both header and footer logos */
 .logo {
     max-width: auto;
     max-height: 150px;
-    filter: drop-shadow(0 0 10px rgba(139, 0, 0, 0.5));
+    filter: drop-shadow(0 0 10px rgba(139, 0, 0, 0.5)); /* subtle red halo */
 }
 
+/* Navigation <ul> inside the header: horizontal row of links */
 .header_wrap ul {
     display: flex;
     justify-content: center;
-    gap: 30px;
+    gap: 30px;          /* space between nav items */
     margin-top: 5px;
     list-style: none;
     padding: 0;
-    position: sticky; 
+    position: sticky;   /* keeps nav sticky independently (belt-and-suspenders) */
     top: 0;
-    z-index: 9999; 
+    z-index: 9999;
 }
 
+/* Base link style inside the header */
 .header_wrap a {
     color: white;
     display: inline-block;
     text-decoration: none;
-    transition: color 0.3s ease;
- }
-
-.header_wrap a:hover {
-     color: red;
+    transition: color 0.3s ease; /* smooth color change on hover */
 }
-/*====================================================================*/
-/* ========== FOOTER ========== */
 
+/* Hover state: link turns red */
+.header_wrap a:hover {
+    color: red;
+}
+
+
+/*====================================================================
+  FOOTER
+  ──────────────────────────────────────────────────────────────────
+====================================================================*/
 footer {
     background: rgba(5, 5, 5, 0.85);
-    border-top: 2px solid #ff0000;
-    box-shadow: 0px 8px 35px rgba(255, 0, 0, 0.7);
+    border-top: 2px solid #ff0000;     /* red accent border at the top */
+    box-shadow: 0px 8px 35px rgba(255, 0, 0, 0.7); /* red glow above footer */
     color: white;
     padding-top: 20px;
     padding-bottom: 15px;
-    border-top-left-radius: 50px;
+    border-top-left-radius: 50px;      /* rounded top corners only */
     border-top-right-radius: 50px;
     margin-top: 50px;
 }
 
+/* Social icon links: horizontal row centered in the footer */
 .links {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    gap: 100px;
+    gap: 100px; /* wide gap so icons are well-spaced */
 }
 
 .footer_wrap {
     width: 100%;
 }
 
+/* Footer links: same style as header links */
 .footer_wrap a {
     color: white;
     display: inline-block;
     text-decoration: none;
     transition: color 0.3s ease;
- }
-
-.footer_wrap a:hover {
-     color: red;
 }
 
+.footer_wrap a:hover {
+    color: red;
+}
+
+/* Footer navigation <ul>: horizontal, left-aligned */
 .footer_wrap ul {
     display: flex;
     text-align: left;
@@ -146,9 +187,12 @@ footer {
     list-style: none;
     padding: 0;
 }
-/*====================================================================*/
-/* ========== SOCIAL MEDIA ========== */
 
+
+/*====================================================================
+  SOCIAL MEDIA ICON CARDS (.social)
+  ──────────────────────────────────────────────────────────────────
+====================================================================*/
 .social {
     background: #111;
     color: #e0e0e0;
@@ -165,38 +209,38 @@ footer {
     width: auto;
 }
 
+/* Hover: lift + tilt + red glow */
 .social:hover {
     transform: translateY(-5px) rotate(-2deg);
     box-shadow: 0 0 20px rgba(139, 0, 0, 0.8), inset 0 0 25px rgba(255, 0, 0, 0.15);
 }
 
- .social img {
-    max-height: 50px ;
+/* Icon image inside each social card */
+.social img {
+    max-height: 50px;
     width: auto;
     display: block;
     border-radius: 22%;
- }
+}
 
+/* .down_foot: logo (left) + footer nav (right) — horizontal layout */
 .down_foot {
     display: flex;
     align-items: center;
 }
 
+/* .nav_foot takes full width so nav links spread to the right */
 .nav_foot {
     width: 100%;
-    margin-bottom: 10px
+    margin-bottom: 10px;
 }
 
+/* .img_foot controls the logo wrapper width in the footer */
 .img_foot {
     width: 67%;
 }
 
-.logo {
-    max-width: auto;
-    max-height: 150px;
-    filter: drop-shadow(0 0 10px rgba(139, 0, 0, 0.5));
-}
-
+/* Copyright line — centered at the very bottom */
 #rights {
     display: block;
     text-align: center;
@@ -204,19 +248,71 @@ footer {
     margin-top: 10px;
     margin-bottom: 0;
 }
-/*====================================================================*/
+
+/*--------------@keyframes defines what changes, and the animation property on the element controls how and when it plays.-------------------------
+@keyframes animationName {
+  from {  starting state  }
+  to   {  ending state }
+}
+/*
+
+
+/*====================================================================
+  ANIMATION: flicker
+  ──────────────────────────────────────────────────────────────────
+  Used on: the <ul> navigation lists in both header and footer.
+
+  Timeline breakdown:
+    0%–18%  : fully on (opacity 1)
+    20%     : quick flicker off (opacity 0.3)
+    22%–24% : flickers again
+    25%–53% : back on
+    55%     : one more flicker
+    57%–100%: stays on for the rest of the 4-second loop
+====================================================================*/
 @keyframes flicker {
-  0%, 18%, 22%, 25%, 53%, 57%, 100% { opacity: 1; }
-  20%, 24%, 55% { opacity: 0.3; } 
+    0%, 18%, 22%, 25%, 53%, 57%, 100% { opacity: 1;   }
+    20%, 24%, 55% { opacity: 0.3; }
 }
 
 .flicker-effect {
-  animation: flicker 4s infinite;
+    animation: flicker 4s infinite;
 }
+
+
+/*====================================================================
+  ANIMATION: text-glitch
+  ──────────────────────────────────────────────────────────────────
+  Applied to the site's h1 title in the header.
+
+  Timeline breakdown (3-second loop, alternate-reverse):
+    0%  : normal shadow (dark red + dark blue offset), no skew
+    2%  : full red + cyan shadow, skewed 5° right → strong glitch
+    4%  : reversed shadow direction, skewed 5° left
+    6%  : back to original shadow, no skew
+    100%: stays normal for most of the animation duration
+====================================================================*/
 @keyframes text-glitch {
-    0% { text-shadow: 2px 2px 0px #8b0000, -2px -2px 0px #0000aa; transform: skewX(0deg); }
-    2% { text-shadow: -3px -2px 0px #ff0000, 2px 3px 0px #00ffff; transform: skewX(5deg); } 
-    4% { text-shadow: 2px -2px 0px #8b0000, -2px 2px 0px #0000aa; transform: skewX(-5deg); }
-    6% { text-shadow: -2px 2px 0px #8b0000, 2px -2px 0px #0000aa; transform: skewX(0deg); }
-    100% { text-shadow: 2px 2px 0px #8b0000, -2px -2px 0px #0000aa; transform: skewX(0deg); }
+    0% {
+        text-shadow: 2px 2px 0px #8b0000, -2px -2px 0px #0000aa;
+        transform: skewX(0deg);
+    }
+    2% {
+        /* Chromatic aberration peak: red shifts one way, cyan the other */
+        text-shadow: -3px -2px 0px #ff0000, 2px 3px 0px #00ffff;
+        transform: skewX(5deg);
+    }
+    4% {
+        text-shadow: 2px -2px 0px #8b0000, -2px 2px 0px #0000aa;
+        transform: skewX(-5deg);
+    }
+    6% {
+        text-shadow: -2px 2px 0px #8b0000, 2px -2px 0px #0000aa;
+        transform: skewX(0deg);
+    }
+    100% {
+        /* Stays at base shadow for most of the loop — glitch is brief */
+        text-shadow: 2px 2px 0px #8b0000, -2px -2px 0px #0000aa;
+        transform: skewX(0deg);
+    }
 }

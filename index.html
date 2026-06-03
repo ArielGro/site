@@ -4,64 +4,102 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
-<!-- ======================================================================================= -->
+
+    <!-- ============================================================
+         GOOGLE FONTS
+         Each @import loads a custom pixel/retro font used throughout
+         the site to reinforce the FNAF horror-game aesthetic.
+         - Press Start 2P : pixel-art style, used for headings/buttons
+         - Jersey 10/20   : retro mono, used for body text and labels
+         - Sixtyfour      : old-school digital display, used in nav lists
+         - Nosifer        : horror drip font, used on the contact page h2
+    ============================================================ -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Jersey+20&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sixtyfour&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nosifer&display=swap">
-<!-- ======================================================================================= -->
+
+    <!-- ============================================================
+    ============================================================ -->
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="global.css">
-    <audio src="img/FAN.mp3"></audio>
 </head>
 <body>
-<!-- ======================================================================================= -->
-    <!-- HEADER -->
+
+    <!-- =============================================================
+         HEADER
+         Sticky top bar that stays visible while the user scrolls.
+    ============================================================== -->
     <header>
         <div class="container">
             <div class="header_wrap">
+
+                <!-- Top part of the header: logo + title side by side -->
                 <div class="up_head">
-                    <div class="img"><img class="logo" src="img/logo.png" alt="logo" /> </div>
-                    <div class="h1"><h1>Freddy's Home</h1></div>
+                    <div class="img">
+                        <!-- Site logo; drop-shadow styled in global.css -->
+                        <img class="logo" src="img/logo.png" alt="logo" />
+                    </div>
+                    <div class="h1">
+                        <!-- Main site title — animated with text-glitch keyframes (global.css) -->
+                        <h1>Freddy's Home</h1>
+                    </div>
                 </div>
-                <!-- Navigation menu -->
+
+                <!-- Navigation menu — links to the three main pages -->
                 <nav>
                     <ul class="flicker-effect">
+                        <!-- flicker-effect: CSS animation that flickers the nav like broken neon -->
                         <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About</a></li>
                         <li><a href="contacts.html">Contact</a></li>
                     </ul>
                 </nav>
+
             </div>
         </div>
     </header>
- <!-- ======================================================================================= -->
-    <!-- MAIN -->
+
+    <!-- =============================================================
+         MAIN CONTENT
+         Split into two sections:
+           1. Items Section  — three featured category cards
+                               (Movies, Games, Info)
+           2. Services Section — a 2×3 grid of topic-specific services
+    ============================================================== -->
     <main>
+
+        <!-- -----------------------------------------------------------
+             SECTION 1: ITEMS / CATEGORY CARDS
+             Three clickable cards arranged in a horizontal row.
+        ----------------------------------------------------------- -->
         <section class="Items_sec">
             <div class="container">
                 <div class="items_wrap">
-                    <!-- Movies card -->
+
+                    <!-- CARD 1: Movies -->
                     <div class="items">
-                        <a  class="items-link" onclick="viewUp(this)">
+                        <a class="items-link">
                             <div>
                                 <h3>Movies</h3>
                                 <img src="img/movie.png" alt="movie_and_videos">
                                 <p>Click here to see movies and videos about FNAF</p>
                             </div>
+                            <!-- View counter — the inner .view-count span is updated by JS -->
                             <span class="views">👁 <span class="view-count">0</span> views</span>
-                        </a>                        
-                        <button class="like-btn" onclick="likeUp(this)">
+                        </a>
+                        <!-- Like button: clicking swaps white→red heart and increments counter -->
+                        <button class="like-btn">
                             <img class="white_heart" src="img/white-heart.png" alt="like" />
-                            <img class="red_heart" src="img/red-heart.png" alt="unlike" /> 
+                            <img class="red_heart"   src="img/red-heart.png"   alt="unlike" />
                             <span class="like-count">0</span>
                         </button>
                     </div>
 
-<!-- ======================================================================================= -->
+                    <!-- CARD 2: Games -->
                     <div class="items">
-                        <a class="items-link" onclick="viewUp(this)">
+                        <a class="items-link">
                             <div>
                                 <h3>Games</h3>
                                 <img src="img/game.png" alt="games">
@@ -69,16 +107,16 @@
                             </div>
                             <span class="views">👁 <span class="view-count">0</span> views</span>
                         </a>
-                        <button onclick="likeUp(this)" >
-                            <img class="white_heart"   src="img/white-heart.png" alt="like" />
-                            <img class="red_heart" src="img/red-heart.png" alt="unlike" /> 
+                        <button>
+                            <img class="white_heart" src="img/white-heart.png" alt="like" />
+                            <img class="red_heart"   src="img/red-heart.png"   alt="unlike" />
                             <span class="like-count">0</span>
-                        </button>                        
+                        </button>
                     </div>
 
- <!-- ======================================================================================= -->
+                    <!-- CARD 3: Info -->
                     <div class="items">
-                        <a class="items-link" onclick="viewUp(this)">
+                        <a class="items-link">
                             <div>
                                 <h3>Info</h3>
                                 <img src="img/info.png" alt="info">
@@ -86,23 +124,33 @@
                             </div>
                             <span class="views">👁 <span class="view-count">0</span> views</span>
                         </a>
-                        <button onclick="likeUp(this)" >
+                        <button>
                             <img class="white_heart" src="img/white-heart.png" alt="like" />
-                            <img class="red_heart" src="img/red-heart.png" alt="unlike" /> 
+                            <img class="red_heart"   src="img/red-heart.png"   alt="unlike" />
                             <span class="like-count">0</span>
                         </button>
                     </div>
+
                 </div>
             </div>
         </section>
- <!-- ======================================================================================= -->
+
+        <!-- -----------------------------------------------------------
+             SECTION 2: SERVICES GRID
+             Six service cards arranged in two rows of three.
+             Layout: .up_serv (top row) + .down_serv (bottom row),
+             each using flexbox with gap, defined in style.css.
+        ----------------------------------------------------------- -->
         <section class="Services_sec">
             <div class="container">
                 <h2>Services</h2>
                 <div class="service_wrap">
-                    <!-- Top row of services -->
+
+                    <!-- TOP ROW OF SERVICE CARDS -->
                     <div class="up_serv">
-                        <a class="items-link" onclick="viewUp(this)">
+
+                        <!-- SERVICE 1: Animatronics Database -->
+                        <a class="items-link">
                             <div class="services">
                                 <img class="serv" src="img/database.png" alt="database" />
                                 <h3>Animatronics Database</h3>
@@ -110,7 +158,9 @@
                                 <span class="views">👁 <span class="view-count">0</span> views</span>
                             </div>
                         </a>
-                        <a class="items-link" onclick="viewUp(this)">
+
+                        <!-- SERVICE 2: Story & Lore -->
+                        <a class="items-link">
                             <div class="services">
                                 <img class="serv" src="img/story.png" alt="story" />
                                 <h3>Story & Lore Explanations</h3>
@@ -118,19 +168,24 @@
                                 <span class="views">👁 <span class="view-count">0</span> views</span>
                             </div>
                         </a>
-                        <a class="items-link" onclick="viewUp(this)">
+
+                        <!-- SERVICE 3: Gameplay Tips -->
+                        <a class="items-link">
                             <div class="services">
                                 <img class="serv" src="img/gaming.png" alt="gaming" />
                                 <h3>Gameplay & Survival Tips</h3>
                                 <p>Survival guides for game nights</p>
-                               <span class="views">👁 <span class="view-count">0</span> views</span>
+                                <span class="views">👁 <span class="view-count">0</span> views</span>
                             </div>
                         </a>
+
                     </div>
 
-                    <!-- Bottom row of services -->
+                    <!-- BOTTOM ROW OF SERVICE CARDS -->
                     <div class="down_serv">
-                        <a class="items-link" onclick="viewUp(this)">
+
+                        <!-- SERVICE 4: Secrets & Easter Eggs -->
+                        <a class="items-link">
                             <div class="services">
                                 <img class="serv" src="img/secret.png" alt="secret" />
                                 <h3>Secrets & Easter Eggs</h3>
@@ -138,7 +193,9 @@
                                 <span class="views">👁 <span class="view-count">0</span> views</span>
                             </div>
                         </a>
-                        <a class="items-link" onclick="viewUp(this)">
+
+                        <!-- SERVICE 5: Movies & Videos -->
+                        <a class="items-link">
                             <div class="services">
                                 <img class="serv" src="img/video.png" alt="video" />
                                 <h3>Movies & Videos</h3>
@@ -146,24 +203,41 @@
                                 <span class="views">👁 <span class="view-count">0</span> views</span>
                             </div>
                         </a>
-                        <a class="items-link" onclick="viewUp(this)">
+
+                        <!-- SERVICE 6: Timeline Overview -->
+                        <a class="items-link">
                             <div class="services">
                                 <img class="serv" src="img/time.png" alt="time" />
                                 <h3>Timeline Overview</h3>
                                 <p>Timeline of all events in FNAF</p>
-                               <span class="views">👁 <span class="view-count">0</span> views</span>
+                                <span class="views">👁 <span class="view-count">0</span> views</span>
                             </div>
                         </a>
+
                     </div>
                 </div>
             </div>
         </section>
+
     </main>
-<!-- ======================================================================================= -->
+
+    <!-- =============================================================
+         FOOTER
+         Contains three sections:
+           1. Social media icon links (Instagram, TikTok, YouTube)
+           2. Bottom row: logo on the left + nav links on the right
+           3. Copyright notice centered at the very bottom
+         Styles are shared via global.css (.footer_wrap, .social,
+         .down_foot, .links, #rights).
+    ============================================================== -->
     <footer>
         <div class="container">
             <div class="footer_wrap">
-                <!-- Social media icons -->
+
+                <!-- SOCIAL MEDIA LINKS
+                     Three icon cards that link to external profiles.
+                     Each .social div gets a hover lift + glow effect
+                     defined in global.css. -->
                 <div class="links">
                     <a href="https://www.instagram.com/ariel_grodsky/">
                         <div class="social">
@@ -182,10 +256,14 @@
                     </a>
                 </div>
 
-                <!-- Footer bottom: Logo and navigation menu -->
+                <!-- BOTTOM ROW: Logo (left) + Navigation (right) -->
                 <div class="down_foot">
-                    <div class="img_foot"><img class="logo" src="img/logo.png" alt="logo" /></div>
+                    <div class="img_foot">
+                        <!-- Repeated logo — mirrors the header logo -->
+                        <img class="logo" src="img/logo.png" alt="logo" />
+                    </div>
                     <div class="nav_foot">
+                        <!-- Footer navigation — same links as the header nav -->
                         <nav>
                             <ul class="flicker-effect">
                                 <li><a href="index.html">Home</a></li>
@@ -195,12 +273,13 @@
                         </nav>
                     </div>
                 </div>
-<!-- ======================================================================================= -->
+
+                <!-- COPYRIGHT LINE — centered below footer content -->
                 <p id="rights">© 2025 My Website. All rights reserved to ariel grodsky.</p>
-<!-- ======================================================================================= -->                
+
             </div>
         </div>
     </footer>
-    <script src="main.js"></script>
+
 </body>
 </html>
